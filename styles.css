@@ -53,7 +53,7 @@ header div{
 	width: 12rem;
 	margin: 0.5rem 0.4rem;
 
-	background: #141214;
+	background: #2C2C2C;
 	font-size: 0;
 
   color: #ffffff;
@@ -68,7 +68,7 @@ header div{
 }
 
 .deck .card.open {
-	background: #02b3e4;
+	background: #83FFE6;
 	cursor: default;
   transition-duration: 0.2s;
 	animation-duration: .75s;
@@ -80,14 +80,15 @@ header div{
 
 .deck .card.match {
 	cursor: default;
-	background: #E5F720;
+	background: #FCFCFC;
+  color:black;
 	font-size: 5rem;
   transition-duration: 0.2s;
 }
 
 .deck .card.unmatched {
 	transition-duration: 0.2s;
-	background: #e2043b;
+	background:#FF5F5F;
 }
 
 .deck .card.disabled {

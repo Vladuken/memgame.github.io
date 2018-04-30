@@ -10,13 +10,19 @@
 
 
 //const deck = document.querySelector(".deck");
+
+let size = prompt('Choose size of deck', 12);
+
+
 const deck = document.getElementById('deck');
 let openedCards = [];
 let matchedCards = document.getElementsByClassName('match');
 let cards =[];
 let moves = 0;
 function CreateArray(len){
-  if (len<0){len = 12};
+  if (len<0 || len > 40){
+    alert("Deck size is set to 12");
+    len = 12};
   if (len % 2 == 1){
     len= len +  1;
   }
@@ -24,7 +30,7 @@ function CreateArray(len){
 }
 function StartGame(){
   moves = 0;
-  let a = CreateArray(-2);
+  let a = CreateArray(size);
   newBoard(a);
   cards = createCardArrayAndAddListeners();
   var shuffledCards = shuffle(cards);
@@ -45,9 +51,7 @@ function StartGame(){
   }
 
 }
-
 window.onload = StartGame();
-
 //shuffles cards in array
 function shuffle(array){
   let currentIndex = array.length;

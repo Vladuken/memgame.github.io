@@ -1,0 +1,50 @@
+.deck{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content:space-around;
+  align-items:baseline;
+
+  border: 1px solid black;
+  width: 90vw;
+  height: 90vh;
+}
+.card{
+  width: 30px;
+  height: 30px;
+  background: #222;
+
+}
+
+.open{
+  background: white;
+}
+.disabled{
+  pointer-events: none;
+	opacity: 0.9;
+}
+
+.timer{
+  display: inline-block;
+	margin: 0 1rem;
+
+}
+.counter{
+  display: inline-block;
+}
+
+
+.overlay{
+  position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: red;
+  visibility: hidden;
+  opacity: 0;
+}
+.show{
+  visibility: visible;
+  opacity: 1;
+}

@@ -15,9 +15,17 @@ let openedCards = [];
 let matchedCards = document.getElementsByClassName('match');
 let cards =[];
 let moves = 0;
+function CreateArray(len){
+  if (len<0){len = 12};
+  if (len % 2 == 1){
+    len= len +  1;
+  }
+  return Array.from({length : len},(k,i)=>Math.floor(i / 2));
+}
 function StartGame(){
   moves = 0;
-  newBoard([1,1,2,2]);
+  let a = CreateArray(-2);
+  newBoard(a);
   cards = createCardArrayAndAddListeners();
   var shuffledCards = shuffle(cards);
 
@@ -66,7 +74,7 @@ function displayCard(){
 function newBoard(card_array){
   let output ="";
   for(let i = 0; i<card_array.length; i++){
-    output+= '<div class="card" id="tile_'+i+'" type="A'+card_array[i]+'"></div>';
+    output+= '<div class="card" id="tile_'+i+'" type="A'+card_array[i]+'">'+card_array[i]+'</div>';
   }
   document.getElementById('deck').innerHTML = output;
 }
@@ -183,7 +191,7 @@ function unmatched(){
         openedCards[1].classList.remove("show", "open", "unmatched");
         enable();
         openedCards = [];
-    },1100);
+    },700);
 }
 
 //disable cards temporarily

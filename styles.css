@@ -1,28 +1,101 @@
-.deck{
+html,
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: #ddd;
+	font-family: 'Permanent Marker', cursive;
+	font-size: 16px;
+  font-family: 'Julius Sans One', sans-serif;
+}
+
+header{
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content:space-around;
-  align-items:baseline;
-
-  border: 1px solid black;
-  width: 90vw;
-  height: 90vh;
+  flex-direction: column;
+  justify-content:space-between;
+  align-items:center;
+  font-size: 30px;
+  margin: 0.5em 0em 0em 0em;
 }
-.card{
-  width: 30px;
-  height: 30px;
-  background: #222;
-
+header div{
+  margin: 0.6em;
+}
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 }
 
-.open{
-  background: white;
+
+.deck{
+  width: 70%;
+	background: #716F71;
+	padding: 1em;
+	border-radius: 5px;
+
+	box-shadow: 8px 9px 26px 0 rgba(46, 61, 73, 0.5);
+
+  display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+
+  margin: 0 3em 3em 3em;
 }
-.disabled{
-  pointer-events: none;
+
+.deck .card {
+	height: 12rem;
+	width: 12rem;
+	margin: 0.5rem 0.4rem;
+
+	background: #141214;
+	font-size: 0;
+
+  color: #ffffff;
+	border-radius: 5px;
+	cursor: pointer;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+  box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+}
+
+.deck .card.open {
+	background: #02b3e4;
+	cursor: default;
+  transition-duration: 0.2s;
+	animation-duration: .75s;
+}
+
+.deck .card.show {
+	font-size: 5rem;
+}
+
+.deck .card.match {
+	cursor: default;
+	background: #E5F720;
+	font-size: 5rem;
+  transition-duration: 0.2s;
+}
+
+.deck .card.unmatched {
+	transition-duration: 0.2s;
+	background: #e2043b;
+}
+
+.deck .card.disabled {
+	pointer-events: none;
 	opacity: 0.9;
 }
+
+
 
 .timer{
   display: inline-block;
@@ -34,17 +107,51 @@
 }
 
 
-.overlay{
-  position: fixed;
+.overlay {
+	position: fixed;
 	top: 0;
 	bottom: 0;
 	left: 0;
 	right: 0;
-	background: red;
-  visibility: hidden;
-  opacity: 0;
+	background: rgba(0, 0, 0, 0.7);
+	transition: opacity 500ms;
+	visibility: hidden;
+	opacity: 0;
 }
+
 .show{
   visibility: visible;
   opacity: 1;
+}
+
+.popup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+	margin: 70px auto;
+	padding: 20px;
+	background: #ffffff;
+
+  border-radius: 5px;
+  overflow: hidden;
+	width: 70%;
+	position: relative;
+  font-size: 1.5rem;
+}
+
+#play-again {
+	background-color: #333;
+	padding: 0.7rem 1rem;
+	font-size: 1.1rem;
+	display: block;
+	margin: 0 auto;
+	width: 50%;
+	color: #ffffff;
+  border: 0px;
+	border-radius: 5px;
+}
+#play-again:hover{
+  opacity: 0.9;
+  transition-duration: 0.2s;
 }

@@ -1,0 +1,13 @@
+@media (max-device-width: 800px),(max-width:800px) {
+
+  main{
+    font-size: 5rem;
+  }
+  .overlay{
+    height: 100%;
+  }
+  .popup{
+    height: 90vh;
+  }
+
+}

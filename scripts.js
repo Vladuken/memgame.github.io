@@ -124,9 +124,9 @@ function moveCounter(){
 }
 
     //game timer
-  var second = 0, minute = 0;
-  var timer = document.querySelector(".timer");
-  var interval;
+  let second = 0, minute = 0;
+  let timer = document.querySelector(".timer");
+  let interval;
   function startTimer(){
       interval = setInterval(function(){
           timer.innerHTML = "Timer: "+minute+"mins "+second+"secs";
@@ -158,21 +158,24 @@ function moveCounter(){
           document.getElementById("finalMove").innerHTML = moves;
           document.getElementById("totalTime").innerHTML = finalTime;
           //closeicon on modal
-          closeModal();
+          //closeModal();
 
       };
   }
 
   //close icon on modal
-  function closeModal(){
-      closeicon.addEventListener("click", function(e){
-          modal.classList.remove("show");
-          StartGame();
-      });
-  }
+  // function closeModal(){
+  //     closeicon.addEventListener("click", function(e){
+  //         modal.classList.remove("show");
+  //         StartGame();
+  //     });
+  // }
   //for player to play Again
   function playAgain(){
+
       modal.classList.remove("show");
+      timer.innerHTML = "Timer: 0";
+      counter.innerHTML = "Moves: 0";
       StartGame();
   }
 

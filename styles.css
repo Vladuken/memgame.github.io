@@ -6,7 +6,7 @@ body {
 	padding: 0;
 	display:flex;
 	flex-direction: column;
-	justify-content:space-around;
+	justify-content:center;
   	align-items:center;
 	
 	
@@ -15,7 +15,6 @@ body {
 body {	
 	background: #ddd;
 	font-size: 20px;
-	
   	font-family: 'Julius Sans One', sans-serif;
 }
 
@@ -35,7 +34,7 @@ header div{
 
 
 .container {
-
+	max-width:900px;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
@@ -65,8 +64,8 @@ header div{
 }
 
 .deck .card {
-	height: 12rem;
-	width: 12rem;
+	height: 14rem;
+	width: 14rem;
 	margin: 0.5rem 0.4rem;
 
 	background: #2C2C2C;

@@ -11,8 +11,9 @@
 
 //const deck = document.querySelector(".deck");
 
-let size = prompt('Choose size of deck', 12);
-let type = "ksis";
+let size = prompt('Choose size of deck\n Type "ksis" of "group" to see what happens \n If input error - standart size is set(14)', 14);
+let teacherstype = "ksis";
+let studentstype = "group";
 
 const deck = document.getElementById('deck');
 let openedCards = [];
@@ -22,8 +23,8 @@ let moves = 0;
 function CreateArray(len){
   len =  +len;
   if (len<0 || len > 40 || isNaN(len)){
-    alert("Deck size is set to 12");
-    len = 12;}
+    alert("Deck size is set to 14");
+    len = 14;}
   if (len % 2 == 1){
     len= len +  1;
   }
@@ -81,9 +82,15 @@ function displayCard(){
 function newBoard(card_array){
   let output ="";
 
-if (size == type){
+if (size == teacherstype){
   for(let i = 0; i<card_array.length; i++){
-    output+= '<div class="card" id="tile_'+i+'" type="A'+card_array[i]+'"><img src="assets/'+card_array[i]+'.jpg"></div>';
+    output+= '<div class="card" id="tile_'+i+'" type="A'+card_array[i]+'"><img src="assets/teachers/'+card_array[i]+'.jpg"></div>';
+    //output+= '<div class="card" id="tile_'+i+'" type="A'+card_array[i]+'"><img src="assets/3.jpg"></div>';
+  }
+}
+else if (size == studentstype){
+  for(let i = 0; i<card_array.length; i++){
+    output+= '<div class="card" id="tile_'+i+'" type="A'+card_array[i]+'"><img src="assets/students/'+card_array[i]+'.jpg"></div>';
     //output+= '<div class="card" id="tile_'+i+'" type="A'+card_array[i]+'"><img src="assets/3.jpg"></div>';
   }
 }

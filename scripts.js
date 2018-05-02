@@ -12,7 +12,7 @@
 //const deck = document.querySelector(".deck");
 
 let size = prompt('Choose size of deck', 12);
-
+let type = "ksis";
 
 const deck = document.getElementById('deck');
 let openedCards = [];
@@ -20,9 +20,10 @@ let matchedCards = document.getElementsByClassName('match');
 let cards =[];
 let moves = 0;
 function CreateArray(len){
-  if (len<0 || len > 40){
+  len =  +len;
+  if (len<0 || len > 40 || isNaN(len)){
     alert("Deck size is set to 12");
-    len = 12};
+    len = 12;}
   if (len % 2 == 1){
     len= len +  1;
   }
@@ -30,6 +31,8 @@ function CreateArray(len){
 }
 function StartGame(){
   moves = 0;
+
+	
   let a = CreateArray(size);
   newBoard(a);
   cards = createCardArrayAndAddListeners();
@@ -77,9 +80,18 @@ function displayCard(){
 
 function newBoard(card_array){
   let output ="";
+
+if (size == type){
+  for(let i = 0; i<card_array.length; i++){
+    output+= '<div class="card" id="tile_'+i+'" type="A'+card_array[i]+'"><img src="assets/'+card_array[i]+'.jpg"></div>';
+    //output+= '<div class="card" id="tile_'+i+'" type="A'+card_array[i]+'"><img src="assets/3.jpg"></div>';
+  }
+}
+else{
   for(let i = 0; i<card_array.length; i++){
     output+= '<div class="card" id="tile_'+i+'" type="A'+card_array[i]+'">'+card_array[i]+'</div>';
   }
+}
   document.getElementById('deck').innerHTML = output;
 }
 
@@ -92,6 +104,7 @@ function createCardArrayAndAddListeners(){
      cards[i].type = Math.floor(i / 2);
      cards[i].addEventListener("click", displayCard);
   };
+	
   return cards;
 }
 

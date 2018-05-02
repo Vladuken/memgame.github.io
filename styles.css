@@ -65,6 +65,7 @@ header div{
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	overflow: hidden;
 
   box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
 }
@@ -76,6 +77,30 @@ header div{
 	animation-duration: .75s;
 }
 
+
+
+img{
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	background: black;
+}
+.deck .card img{
+	opacity:0;
+	transition: all 1s;
+}
+.deck .card.show img{
+	opacity: 0.7;
+	visibility: visible;
+}
+.deck .card.match img{
+	visibility: visible;
+	opacity: 1;
+}
+
+
+
+
 .deck .card.show {
 	font-size: 5rem;
 }
@@ -83,9 +108,9 @@ header div{
 .deck .card.match {
 	cursor: default;
 	background: #FCFCFC;
-  color:black;
+        color:black;
 	font-size: 5rem;
-  transition-duration: 0.2s;
+        transition-duration: 0.7s;
 }
 
 .deck .card.unmatched {
@@ -95,7 +120,6 @@ header div{
 
 .deck .card.disabled {
 	pointer-events: none;
-	opacity: 0.9;
 }
 
 
